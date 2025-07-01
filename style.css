@@ -67,11 +67,15 @@ h1, h2, h3, h4, h5, h6 {
 .sidebar {
     background-color: var(--blue-color);
     color: white;
-    padding: 10px;
+    padding: 14px;
+    justify-items: start;
 }
 
 ul {
     list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    
 }
 
 .dashboard {
@@ -79,14 +83,27 @@ ul {
     font-weight: 700;
 }
 
-.nav {
+.nav, .settings {
     display: grid;
+    margin-bottom: 60px;
+    gap: 10px;
 }
 
-.nav > ul > li {
+
+.nav li a, .settings li a {
+    display: flex;
+    gap: 14px;
+    padding-left: 10px;
+    justify-items: center;
+    align-items: center;
+    text-decoration: none;
     color: white;
 }
 
+.dashboard {
+    display: flex;
+    gap: 10px;
+}
 
 .container {
     display: grid;
@@ -96,52 +113,212 @@ ul {
 
 .sidebar {
     display: grid;
-    grid-template-rows: 60px 200px 10px;
+    grid-template-rows: 60px 300px 180px;
     grid-row: span 2;
+}
+
+.name {
+  font-weight: 700;
 }
 
 .topbar {
     display: grid;
-
+    padding: 16px 30px;
+    padding-right: 44px;
+    box-shadow: 0 6px 10px rgb(163, 176, 199, .6);
 }
 
 .searchbar {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 30px 7fr 3fr;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.notif {
+    justify-self: end;
+    gap: 20px;
+}
+
+.magnify {
+    justify-self: end;
+}
+
+.search {
+    border: none;
+    border-radius: 25px;
+    height: 24px;
+    background-color: #e5ecf8;
+    margin-left: 10px;
+    margin-right: 40px;
 }
 
 .notif {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 3fr;
+    align-items: center;
+    justify-items: center;
 }
 
 .message {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 66px 250px;
+    align-items: center;
 }
 
 .msg {
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 14px 30px;
+    gap: 4px;
+    padding-bottom: 2px;
+}
+
+.greeting {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.user {
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .options {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    justify-self: end;
+    gap: 24px;
+}
+
+.options > li > * {
+    color: white;
+    background-color: var(--blue-color);
+    border: none;
+    font-size: 14px;
+    border-radius: 25px;
+    width: 90px;
+    padding: 6px 16px;
 }
 
 .bottombar {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    align-items: center;
 }
 
 .main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2.5fr 1fr;
+    grid-template-rows: 400px 400px;
+    background-color: #e5ecf8;
+    padding: 14px 20px;
+    margin-top: 4px;
+    column-gap: 20px;
+}
+
+.header {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: minmax(200px, 1fr);
+    grid-row: span 2;
+    gap: 20px;
+    padding: 10px 0;
 }
 
 .projects {
-    display: grid;
     grid-row: span 2;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: 20px 80px;
+  gap: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 10px rgb(163, 176, 199, .6);
+  padding: 30px 20px;
+  border-left: 10px solid rgb(252, 174, 30);
+}
+
+.title {
+  font-weight: 700;
+}
+
+.card > p:nth-of-type(2) {
+  font-size: 14px;
+  margin-top: -10px;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-self: end;
+  gap: 20px;
+}
+
+.announcements .wrap, .trending .wrap {
+  background-color: white;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-top: 10px;
+  box-shadow: 0 6px 10px rgb(163, 176, 199, .6);
+}
+
+.announcement:nth-child(-n + 2) {
+  border-bottom: 1px solid rgba(100, 100, 100, 0.486);
+}
+
+.announcement .title {
+   font-size: 14px;
+}
+
+.announcement p {
+  font-size: 12px;
+}
+
+.announcement {
+  padding: 12px 0;
+}
+
+.trending img {
+  border-radius: 25px;
+}
+
+.trending .user {
+  display: grid;
+  grid-template-columns: 50px 150px;
+  gap: 14px;
+  column-gap: 14px;
+  row-gap: 0;
+}
+
+.trending .wrap {
+  display: grid;
+  gap: 23px;
+}
+
+.at {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.trending .title {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.616)
+}
+
+.user-info {
+  display: grid;
+  grid-row: 14px 14px;
+}
+
+.at {
+  align-self: end;
 }
 
